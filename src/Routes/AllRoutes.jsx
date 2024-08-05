@@ -4,7 +4,7 @@ import AddProduct from "../Components/AddProduct";
 import Home from "../Components/Home";
 import { ToastContainer,  } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+//for new commit
 const AllRoutes = () => {
   return (
     <>
