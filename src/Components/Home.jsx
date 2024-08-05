@@ -15,6 +15,9 @@ import {
   Select,
   Input,
   useToast,
+  VStack,
+  HStack,
+  Text,
 } from "@chakra-ui/react";
 import { AddIcon, DeleteIcon } from "@chakra-ui/icons";
 import {
@@ -32,7 +35,7 @@ const Home = () => {
   const [category, setCategory] = useState("");
   const [price, setPrice] = useState("");
   const [sort, setSort] = useState("");
-  const [productsPerPage, setProductsPerPage] = useState(5);
+  const [productsPerPage, setProductsPerPage] = useState(25);
   const [currentPage, setCurrentPage] = useState(1);
   const [editProductId, setEditProductId] = useState(null);
   const [editedProduct, setEditedProduct] = useState({
@@ -95,11 +98,15 @@ const Home = () => {
     setEditProductId(null);
     toast({
       title: "Products Updated.",
-      description: "Selected products have been Updated.",
+      description: "Selected products have been updated.",
       status: "success",
       duration: 5000,
       isClosable: true,
     });
+  };
+
+  const handleCancelClick = () => {
+    setEditProductId(null);
   };
 
   const handleCheckboxChange = (id) => {
@@ -125,13 +132,17 @@ const Home = () => {
   };
 
   return (
-    <Box px={20} py={5} bg={"gray.50"} h={"100vh"}>
+    <Box px={20} py={5} bg={"gray.50"}>
       <Flex justify="space-between" mb={4}>
         <Link to={"/addproduct"}>
-          <Button colorScheme="teal" rightIcon={<AddIcon />} borderRadius={'3xl'}>
+          <Button
+            colorScheme="teal"
+            rightIcon={<AddIcon />}
+            borderRadius={"3xl"}
+          >
             Add Product
           </Button>
-          <Button ml={5} colorScheme="teal" borderRadius={'3xl'}>
+          <Button ml={5} colorScheme="teal" borderRadius={"3xl"}>
             5 / 20 product
           </Button>
         </Link>
@@ -159,10 +170,9 @@ const Home = () => {
             onChange={handleProductsPerPageChange}
             width="8rem"
           >
-            <option value={5}>Product 5</option>
-            <option value={10}>Product 10</option>
-            <option value={15}>Product 15</option>
-            <option value={20}>Product 20</option>
+            <option value={25}>Product 25</option>
+            <option value={50}>Product 50</option>
+            <option value={100}>Product 100</option>
           </Select>
 
           <Button
@@ -174,6 +184,7 @@ const Home = () => {
             rightIcon={<DeleteIcon />}
             onClick={handleDeleteClick}
             isDisabled={selectedProducts.length === 0}
+            // {}
           >
             Delete
           </Button>
@@ -181,8 +192,13 @@ const Home = () => {
       </Flex>
 
       <Center>
-        <Table>
-          <Thead>
+        <Table
+          boxShadow={
+            "rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px"
+          }
+          mb={5}
+        >
+          <Thead bg={"blue.200"}>
             <Tr>
               <Th>
                 <Checkbox
@@ -197,67 +213,119 @@ const Home = () => {
                   }
                 />
               </Th>
-              <Th>Products</Th>
-              <Th>Quick Action</Th>
-              <Th>Product Details</Th>
-              <Th>Price per Unit</Th>
+              <Th color={"black"}>Products</Th>
+              <Th color={"black"}>Quick Action</Th>
+              <Th color={"black"}>Product Details</Th>
+              <Th color={"black"}>Price per Unit</Th>
             </Tr>
           </Thead>
           <Tbody>
-            {paginatedProducts.map((product, index) => (
-              <Tr key={product.id} bg={index % 2 === 0 ? "white" : "#ECEFF1"}>
-                <Td>
-                  <Checkbox
-                    isChecked={selectedProducts.includes(product.id)}
-                    onChange={() => handleCheckboxChange(product.id)}
-                    boxShadow={
-                      "rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px"
-                    }
-                  />
-                </Td>
-                <Td>
-                  {editProductId === product.id ? (
-                    <Input
-                      name="product"
-                      value={editedProduct.product}
-                      onChange={handleInputChange}
+            {paginatedProducts.map((product) => (
+              // <></>
+              <React.Fragment key={product.id}>
+                <Tr p={5}>
+                  <Td>
+                    <Checkbox
+                      isChecked={selectedProducts.includes(product.id)}
+                      onChange={() => handleCheckboxChange(product.id)}
+                      boxShadow={
+                        "rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px"
+                      }
                     />
-                  ) : (
-                    product.product
-                  )}
-                </Td>
-                <Td>
-                  {editProductId === product.id ? (
-                    <Button onClick={handleSaveClick}>Save</Button>
-                  ) : (
-                    <Button onClick={() => handleEditClick(product)}>
-                      Quick Edit
-                    </Button>
-                  )}
-                </Td>
-                <Td>
-                  {editProductId === product.id ? (
-                    <Input
-                      name="productDetail"
-                      value={editedProduct.productDetail}
-                      onChange={handleInputChange}
-                    />
-                  ) : (
-                    product.productDetail
-                  )}
-                </Td>
-                <Td>
-                  {editProductId === product.id ? (
-                    <Input
-                      name="price"
-                      value={editedProduct.price}
-                      onChange={handleInputChange}
-                    />
-                  ) : (
-                    product.price
-                  )}
-                </Td>
-              </Tr>
+                  </Td>
+                  <Td>{product.product}</Td>
+                  <Td
+                    onClick={() => handleEditClick(product)}
+                    cursor={"pointer"}
+                  >
+                    {/* <Button > */}
+                    Quick Edit | Add Product Detials
+                    {/* </Button> */}
+                  </Td>
+                  <Td>{product.productDetail}</Td>
+                  <Td>{product.price}</Td>
+                </Tr>
+                {/* <hr style={{backgroundColor:'black'}}/>
+                 <Divider borderColor="black" /> */}
+
+                {editProductId === product.id && (
+                  <Tr bg={"gray.100"}>
+                    <Td colSpan={5}>
+                      <VStack spacing={4} align="stretch">
+                        <HStack spacing={10}>
+                          <Box>
+                            <Flex alignItems="center">
+                              <Text minWidth="100px">Product:</Text>
+                              <Input
+                                name="product"
+                                value={editedProduct.product}
+                                onChange={handleInputChange}
+                                boxShadow={
+                                  "rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px"
+                                }
+                                style={{ borderRadius: "20px" }}
+                              />
+                            </Flex>
+                          </Box>
+                          <Box ml={5}>
+                            <Flex alignItems="center">
+                              <Text minWidth="100px" ml={5}>
+                                Product Details:
+                              </Text>
+                              <Input
+                                name="productDetail"
+                                value={editedProduct.productDetail}
+                                onChange={handleInputChange}
+                                boxShadow={
+                                  "rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px"
+                                }
+                                style={{
+                                  borderRadius: "20px",
+                                  width: "20rem",
+                                  marginLeft: "20px",
+                                }}
+                              />
+                            </Flex>
+                          </Box>
+                          <Box>
+                            <Flex alignItems="center">
+                              <Text minWidth="100px" ml={5}>
+                                Price:
+                              </Text>
+                              <Input
+                                name="price"
+                                value={editedProduct.price}
+                                onChange={handleInputChange}
+                                boxShadow={
+                                  "rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px"
+                                }
+                                style={{ borderRadius: "20px" }}
+                              />
+                            </Flex>
+                          </Box>
+                        </HStack>
+
+                        <HStack spacing={4}>
+                          <Button
+                            colorScheme="teal"
+                            onClick={handleSaveClick}
+                            mt={5}
+                          >
+                            Save
+                          </Button>
+                          <Button
+                            onClick={handleCancelClick}
+                            bg={"red.100"}
+                            mt={5}
+                          >
+                            Cancel
+                          </Button>
+                        </HStack>
+                      </VStack>
+                    </Td>
+                  </Tr>
+                )}
+              </React.Fragment>
             ))}
           </Tbody>
         </Table>

@@ -4,7 +4,7 @@
       "id": "1",
       "product": "Stainless",
       "productDetail": "Material: stainless steel, unit length: 6-12 meter, shape: round",
-      "price": "350/kg",
+      "price": "550/kg",
       "category": "Steel"
     },
     {
@@ -23,7 +23,7 @@
     },
     {
       "id": "7",
-      "product": "Nickel Alloy Pipe",
+      "product": "Nickel Alloy Pipes",
       "productDetail": "Material: nickel alloy, unit length: 5-9 meter, shape: pipe",
       "price": "600/kg",
       "category": "Nickel"
@@ -86,8 +86,8 @@
     },
     {
       "id": "16",
-      "product": "Stainless Steel Pipe",
-      "productDetail": "Material: copper, unit length: 100 meter roll, shape: wire",
+      "product": "Stainless Steel Wire",
+      "productDetail": "Material: stainless steel, unit length: 100 meter roll, shape: wire",
       "price": "350/kg",
       "category": "Steel"
     },
@@ -114,10 +114,80 @@
     },
     {
       "id": "20",
-      "product": "Rubber Gasket",
-      "productDetail": "Material: aluminum, unit length: 1-3 meter, shape: rod",
+      "product": "Copper Rod",
+      "productDetail": "Material: copper, unit length: 1-3 meter, shape: rod",
       "price": "350/kg",
       "category": "Copper"
+    },
+    {
+      "id": "21",
+      "product": "Bronze Pipe",
+      "productDetail": "Material: bronze, unit length: 3-8 meter, shape: pipe",
+      "price": "400/kg",
+      "category": "Bronze"
+    },
+    {
+      "id": "22",
+      "product": "Aluminum Rod",
+      "productDetail": "Material: aluminum, unit length: 1-4 meter, shape: rod",
+      "price": "250/kg",
+      "category": "Aluminum"
+    },
+    {
+      "id": "23",
+      "product": "Titanium Sheet",
+      "productDetail": "Material: titanium, unit length: 2-6 meter, shape: sheet",
+      "price": "800/kg",
+      "category": "Titanium"
+    },
+    {
+      "id": "24",
+      "product": "Plastic Rod",
+      "productDetail": "Material: plastic, unit length: 1-5 meter, shape: rod",
+      "price": "120/kg",
+      "category": "Plastic"
+    },
+    {
+      "id": "25",
+      "product": "Nickel Sheet",
+      "productDetail": "Material: nickel, unit length: 2-5 meter, shape: sheet",
+      "price": "700/kg",
+      "category": "Nickel"
+    },
+    {
+      "id": "26",
+      "product": "Lead Pipe",
+      "productDetail": "Material: lead, unit length: 3-6 meter, shape: pipe",
+      "price": "250/kg",
+      "category": "Lead"
+    },
+    {
+      "id": "27",
+      "product": "Zinc Rod",
+      "productDetail": "Material: zinc, unit length: 1-4 meter, shape: rod",
+      "price": "190/kg",
+      "category": "Zinc"
+    },
+    {
+      "id": "28",
+      "product": "Brass Sheet",
+      "productDetail": "Material: brass, unit length: 2-5 meter, shape: sheet",
+      "price": "350/kg",
+      "category": "Brass"
+    },
+    {
+      "id": "29",
+      "product": "Wood Rod",
+      "productDetail": "Material: wood, unit length: 2-6 meter, shape: rod",
+      "price": "70/kg",
+      "category": "Wood"
+    },
+    {
+      "id": "30",
+      "product": "Plastic Pipe",
+      "productDetail": "Material: plastic, unit length: 1-5 meter, shape: pipe",
+      "price": "150/kg",
+      "category": "Plastic"
     }
   ]
 }
