@@ -128,8 +128,11 @@ const Home = () => {
     <Box px={20} py={5} bg={"gray.50"} h={"100vh"}>
       <Flex justify="space-between" mb={4}>
         <Link to={"/addproduct"}>
-          <Button colorScheme="teal" rightIcon={<AddIcon />}>
+          <Button colorScheme="teal" rightIcon={<AddIcon />} borderRadius={'3xl'}>
             Add Product
+          </Button>
+          <Button ml={5} colorScheme="teal" borderRadius={'3xl'}>
+            5 / 20 product
           </Button>
         </Link>
       </Flex>

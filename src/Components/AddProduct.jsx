@@ -107,14 +107,15 @@ const AddProduct = () => {
   };
 
   return (
-    <Center minHeight="100vh" >
+    <Center minHeight="100vh" bg={'gray.100'} >
       <Box
         width={{ base: "90%", md: "90rem" }}
         boxShadow="2xl"
         p={8}
         borderRadius="md"
+        bg={'gray.50'}
       >
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} >
           <FormControl>
             <Text mb={4}>Select a product, material, and grade:</Text>
             <SimpleGrid columns={{ base: 1, md: 3 }} spacing={10}>
@@ -166,7 +167,7 @@ const AddProduct = () => {
               type="submit"
               isDisabled={loading}
             >
-              Confirm
+              submit
             </Button>
           </FormControl>
         </form>
