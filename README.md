@@ -15,7 +15,7 @@ This is a product management application built with React and Chakra UI. It allo
 ## Tech Stack
 
 - **Frontend**: React, Chakra UI
-- **State Management**: Redux Toolkit (Specify which one you used)
+- **State Management**: Redux Toolkit 
 - **Routing**: React Router
 - **Styling**: Chakra UI
 
