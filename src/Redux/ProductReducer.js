@@ -3,7 +3,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const API_URL = "http://localhost:5001/Products"; //http://localhost:5001/Products
+const API_URL = "https://mock-react-data-1.onrender.com/Products"; //http://localhost:5001/Products
 
 export const fetchProducts = createAsyncThunk("product/fetchProducts", async () => {
   const response = await axios.get(API_URL);

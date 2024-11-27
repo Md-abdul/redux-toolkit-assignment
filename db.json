@@ -1,17 +1,10 @@
 {
   "Products": [
     {
-      "id": "1",
-      "product": "Stainless",
-      "productDetail": "Material: stainless steel, unit length: 6-12 meter, shape: round",
-      "price": "550/kg",
-      "category": "Steel"
-    },
-    {
       "id": "2",
       "product": "Aluminum Sheet 6061",
       "productDetail": "Material: aluminum, unit length: 2-5 meter, shape: sheet",
-      "price": "200/kg",
+      "price": "2200/kg",
       "category": "Aluminum"
     },
     {
@@ -137,7 +130,7 @@
       "id": "23",
       "product": "Titanium Sheet",
       "productDetail": "Material: titanium, unit length: 2-6 meter, shape: sheet",
-      "price": "800/kg",
+      "price": "900/kg",
       "category": "Titanium"
     },
     {
@@ -188,6 +181,13 @@
       "productDetail": "Material: plastic, unit length: 1-5 meter, shape: pipe",
       "price": "150/kg",
       "category": "Plastic"
+    },
+    {
+      "id": 31,
+      "product": "Stainless Steel Pipe",
+      "productDetail": "Material: PVC, unit length: 2x3 meter, shape: sheet",
+      "price": "350/kg",
+      "category": "Copper"
     }
   ]
 }
