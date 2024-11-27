@@ -1,5 +1,3 @@
-# Product Management Application
-
 This is a product management application built with React and Chakra UI. It allows users to add, edit, delete, and view products. The application includes features such as search, filter, and pagination for easy navigation and management of products.
 
 ## Features
@@ -39,6 +37,9 @@ This is a product management application built with React and Chakra UI. It allo
       │   ├── App.jsx
       │   └── main.jsx
       └── package.json
+
+## Image
+![Screenshot 2024-11-27 221338](https://github.com/user-attachments/assets/7fb4ab4b-9a24-4820-870e-0fcf9056f9ad)
 
 
 ## Installation
